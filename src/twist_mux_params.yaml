@@ -1,0 +1,26 @@
+twist_mux:
+  ros__parameters:
+    topics:
+      camera_stop:
+        topic: camera/cmd_vel
+        timeout: 0.5
+        priority: 100
+        enable: true       # Safety stop is ALWAYS enabled
+      locate:
+        topic: locate/cmd_vel
+        timeout: 0.5
+        priority: 20
+        enable: false      # Wait for 'G'
+      explore:
+        topic: explore/cmd_vel
+        timeout: 0.5
+        priority: 5
+        enable: false      # Wait for 'G'
+    
+    # Optional: Locks output to 0 if no one is talking
+    locks:
+      pause:
+        topic: pause_navigation
+        timeout: 0.0
+        priority: 100
+        enabled: true

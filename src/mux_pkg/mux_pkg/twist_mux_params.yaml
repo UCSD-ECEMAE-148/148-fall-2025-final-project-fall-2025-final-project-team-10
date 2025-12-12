@@ -1,0 +1,20 @@
+twist_mux:
+  ros__parameters:
+    topic_name: "cmd_vel"
+    timeout: 0.5
+    inputs:
+      - name: "stop"
+        topic: "stop/cmd_vel"
+        priority: 20
+        short_desc: "stop command"
+        enable: true
+      - name: "locate"
+        topic: "locate/cmd_vel"
+        priority: 10
+        short_desc: "locate mode"
+        enable: false
+      - name: "explore"
+        topic: "explore/cmd_vel"
+        priority: 5
+        short_desc: "explore mode"
+        enable: false

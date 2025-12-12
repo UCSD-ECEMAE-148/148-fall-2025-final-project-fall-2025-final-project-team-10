@@ -1,0 +1,28 @@
+vesc_driver_node:
+  ros__parameters:
+    port: "/dev/ttyACM0"
+    baudrate: 921600
+    duty_cycle_min: -0.95
+    duty_cycle_max: 0.95
+    current_min: 0.0
+    current_max: 40.0
+    servo_min: 0.15
+    servo_max: 0.85
+    publish_rate: 50.0
+
+vesc_to_odom_node:
+  ros__parameters:
+    odom_frame: "odom"
+    base_frame: "base_link"
+    publish_tf: true
+    wheel_radius: 0.05
+    wheel_base: 0.20
+    speed_to_erpm_gain: 4614.0
+    speed_to_erpm_offset: 0.0
+    
+ackermann_to_vesc_node:
+  ros__parameters:
+    speed_to_erpm_gain: -4614.0
+    speed_to_erpm_offset: 0.0
+    steering_angle_to_servo_gain: 1.0
+    steering_angle_to_servo_offset: 0.5

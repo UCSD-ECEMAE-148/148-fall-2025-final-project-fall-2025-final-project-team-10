@@ -1,0 +1,11 @@
+vesc_to_odom_node:
+  ros__parameters:
+    wheelbase: 0.245  # The value you need to tune
+    steering_angle_to_servo_gain: 1.05 # Your corrected steering gain
+    odom_frame: 'odom',
+    base_frame: 'base_link',
+    publish_tf: True,
+    speed_to_erpm_gain: 4614.0,
+    speed_to_erpm_offset: 0.0,
+    steering_angle_to_servo_gain: 0.95,
+    steering_angle_to_servo_offset: 0.0

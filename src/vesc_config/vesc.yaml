@@ -1,0 +1,22 @@
+vesc_driver_node:
+  ros__parameters:
+    port: "/dev/ttyACM0"
+    baudrate: 115200
+    odom_topic: "/odom"
+    publish_tf: true
+    # Robot Specifics (You can tune these later)
+    wheel_radius: 0.05
+    wheel_base: 0.20
+    gear_ratio: 1.0
+    speed_to_erpm_gain: 4614.0
+    speed_to_erpm_offset: 0.0
+    duty_cycle_min: 0.0
+    duty_cycle_max: 0.95
+    current_min: 0.0
+    current_max: 40.0
+    brake_min: -20000.0
+    brake_max: 200000.0
+    speed_min: -25000.0
+    speed_max: 25000.0
+    servo_min: 0.15
+    servo_max: 0.85
