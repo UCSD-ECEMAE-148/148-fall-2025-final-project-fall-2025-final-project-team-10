@@ -15,6 +15,30 @@ Team 10 Fall 2025
 <img src="media/robocar.jpg" alt="Logo" width="400" height="400">
 </div>
 
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li><a href="#team-members">Team Members</a></li>
+    <li><a href="#overview">Overview</a>
+      <ul>
+        <li><a href="#key-features">Key Features</a></li>
+      </ul>
+    </li>
+    <li><a href="#system-architecture">System Architecture</a>
+      <ul>
+        <li><a href="#node-descriptions">Node Descriptions</a></li>
+        <li><a href="#data-flow">Data Flow</a></li>
+      </ul>
+    </li>
+    <li><a href="#demonstration">Demonstration</a></li>
+    <li><a href="#hardware">Hardware & Software</a></li>
+    <li><a href="#how-to-run">How to Run</a></li>
+    <li><a href="#challenges--solutions">Challenges & Solutions</a></li>
+    <li><a href="#future-improvements">Future Improvements</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
+
 ## Team Members
 
 <ul>
@@ -100,7 +124,7 @@ Below is a demonstration of the robot autonomously mapping a room until it spots
 1.  **Build and Source packages:**
     ```bash
     source /opt/ros/foxy/setup.bash
-    build colcon
+    colcon build
     source install/setup.bash
     ```
 2.  **Start the Navigation & SLAM Stack:**
@@ -134,13 +158,13 @@ Below is a demonstration of the robot autonomously mapping a room until it spots
 
 **4. Power Distribution**
 * **The Issue:** With the Lidar, Camera, VESC, Speaker, and Camera Servo all drawing power simultaneously, we encountered brownouts.
-* **The Solution:**  We added a **Powered USB Hub** and an additional powers source with a power bank to power all components and avoid bnrownouts.
+* **The Solution:**  We added a **Powered USB Hub** and an additional powers source with a power bank to power all components and avoid brownouts.
 
 
 ## Future Improvements
 
 **1. Hardware Acceleration (AI Hat)**
-We would have liked to fully integrate the **AI Hat** to offload the computer vision processing from the main CPU. We attempted this integration during the project but faced compatibility issues with the camera DepthAI pipeline. Successful integration would significantly reduce system load and allow for higher framerates, and smarter models and embeddings. 
+We would have liked to fully integrate the **AI Hat** to offload the computer vision processing from the main CPU. We attempted this integration during the project but faced compatibility issues with the camera DepthAI pipeline. Successful integration would significantly reduce system load and allow for higher framerates, and more complex models and embeddings. 
 
 **2. Vertical Panning:** Currently, the camera only pans horizontally. Adding a **vertical servo** would allow the robot to track objects on the floor more effectively without losing them from the frame when getting close.
 
