@@ -81,7 +81,6 @@ Below is a demonstration of the robot autonomously mapping a room until it spots
 </div>
 
 ### Hardware
-* **Chassis:** Traxxas Slash (modified for autonomous control).
 * **Compute:** Raspberry Pi 5.
 * **Sensors:**
     * LIDAR (LD06) for SLAM and Obstacle Avoidance.
