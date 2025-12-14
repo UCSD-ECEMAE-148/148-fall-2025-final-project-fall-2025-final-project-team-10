@@ -118,6 +118,37 @@ Below is a demonstration of the robot autonomously mapping a room until it spots
     ros2 run explore_lite explore --ros-args --params-file /home/projects/ros2_ws/src/explore.yaml
     ```
 
+## Challenges & Solutions
+
+**1. Latency & Camera Data Throughput**
+* **The Issue:** We experienced significant system lag when running SLAM, Nav2, and the Object Detection and Embedding model simultaneously. The camera feed would often "choke" on data, and calculating the precise depth of every pixel introduced too much latency for real-time control.
+* **The Solution:** Instead of relying on expensive depth calculations for distance, we switched to a faster heuristic: **Bounding Box Percentage**. We calculate the ratio of the object's bounding box area relative to the total frame size. This allows us to estimate distance (the bigger the box, the closer the object) with near-zero computational cost.
+
+**2. Electrical Shorting & Mounting**
+* **The Issue:** Our initial chassis design used a custom laser-cut metal base plate. This conductive surface inadvertently caused electrical shorts when exposed pins on the PCBs touched the plate, leading to erratic behavior and hardware risk.
+* **The Solution:** We temporarily resolved this by insulating all boards with electrical tape. For the final revision, we recommend switching to a non-conductive material (acrylic or 3D printed PLA) for the base mounting plate, and 3d printing containers for sensitive components.
+
+**3. Docker Integration**
+* **The Issue:** Integrating the OAK-D camera drivers and the AI Hat hardware interfaces inside the standard Docker container provided by the school proved extremely difficult. The containerization layer complicated the USB device permissions and library dependencies, leading to significant debugging time.
+* **The Solution:** We created a brand new, empty docker to pass any flags we needed, and simplify the process. We only installed what we needed, when we needed it.
+
+  **2. Power Distribution**
+* **The Issue:** With the Lidar, Camera, VESC, Speaker, and Camera Servo all drawing power simultaneously, we encountered brownouts.
+* **The Solution:**  We added a **Powered USB Hub** and an additional powers source with a power bank to power all components and avoid bnrownouts.
+
+
+## Future Improvements
+
+**1. Hardware Acceleration (AI Hat)**
+We would have liked to fully integrate the **AI Hat** to offload the computer vision processing from the main CPU. We attempted this integration during the project but faced compatibility issues with the camera DepthAI pipeline. Successful integration would significantly reduce system load and allow for higher framerates, and smarter models and embeddings. 
+
+**2. Vertical Panning:** Currently, the camera only pans horizontally. Adding a **vertical servo** would allow the robot to track objects on the floor more effectively without losing them from the frame when getting close.
+
+**3. 3D Mount Redesign:** We would have liked to design better custom 3D-printed mounts for the Speaker, I2C extenders, and DC/DC converters to clean up the wiring and improve mechanical stability.
+
+**4. Robust Navigation Recovery**
+We wanted to fine-tune the Nav2 **recovery behaviors** (such as backing up or spinning when stuck). Currently, the exploration node requires precise calibration to prevent the robot from getting stuck in "loops" where it cannot find a valid path to a new frontier.
+
 ## Acknowledgments
 * **Professor Jack Silberman** for the course guidance.
 * **TA Team (Winston, Aryan)** for the technical support.
