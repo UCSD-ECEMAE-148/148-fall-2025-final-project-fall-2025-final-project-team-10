@@ -73,7 +73,12 @@ The robot begins **Identify Mode**, in which you present an item to the camera t
 Below is a demonstration of the robot autonomously mapping a room until it spots the target box, at which point it interrupts the search to approach the target.
 
 <div align="center">
-  <img src="media/WORKING OMG.mp4" alt="Lost and Found Demo" width="600">
+  <img src="media/Demo - Part 1.mp4" alt="Lost and Found Demo" width="600">
+  <img src="media/Demo - Part 2.mp4" alt="Lost and Found Demo" width="600">
+  <img src="media/Demo - Part 3.mp4" alt="Lost and Found Demo" width="600">
+  <img src="media/Demo - Part 4.mp4" alt="Lost and Found Demo" width="600">
+  <img src="media/Demo - Part 5.mp4" alt="Lost and Found Demo" width="600">
+
 </div>
 
 ### Hardware
