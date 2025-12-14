@@ -132,7 +132,7 @@ Below is a demonstration of the robot autonomously mapping a room until it spots
 * **The Issue:** Integrating the OAK-D camera drivers and the AI Hat hardware interfaces inside the standard Docker container provided by the school proved extremely difficult. The containerization layer complicated the USB device permissions and library dependencies, leading to significant debugging time.
 * **The Solution:** We created a brand new, empty docker to pass any flags we needed, and simplify the process. We only installed what we needed, when we needed it.
 
-  **2. Power Distribution**
+**4. Power Distribution**
 * **The Issue:** With the Lidar, Camera, VESC, Speaker, and Camera Servo all drawing power simultaneously, we encountered brownouts.
 * **The Solution:**  We added a **Powered USB Hub** and an additional powers source with a power bank to power all components and avoid bnrownouts.
 
