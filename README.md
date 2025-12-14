@@ -5,14 +5,14 @@
 <br />
 <div align="center">
   <a href="https://jacobsschool.ucsd.edu/">
-    <img src="medial/UCSDLogo_JSOE_BlueGold.png" alt="Logo" width="400" height="100">
+    <img src="media/UCSDLogo_JSOE_BlueGold.png" alt="Logo" width="400" height="100">
   </a>
 <h3>ECE/MAE 148 Final Project</h3>
 <p>
 Team 10 Fall 2025
 </p>
 
-<img src="images/robocar.jpg" alt="Logo" width="400" height="400">
+<img src="media/robocar.jpg" alt="Logo" width="400" height="400">
 </div>
 
 ## Team Members
@@ -39,7 +39,7 @@ The robot begins **Identify Mode**, in which you present an item to the camera t
 
 ## System Architecture
 <div align="center">
-  <img src="media/pipeline.jpg" alt="System Architecture Diagram" width="800">
+  <img src="media/Pipeline.jpg" alt="System Architecture Diagram" width="800">
   <br>
   <em>*Disclaimer: This graph is a simplified overview and does not represent the full list of nodes and topics.</em>
 </div>
